@@ -20,7 +20,6 @@ class AboutViewController: UIViewController {
         iv.layer.cornerRadius = 50
         iv.backgroundColor = UIColor(white: 0.95, alpha: 1)
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.isUserInteractionEnabled = true // Enable interaction for tap gesture
         return iv
     }()
 
@@ -86,46 +85,19 @@ class AboutViewController: UIViewController {
         view.backgroundColor = UIColor(white: 0.95, alpha: 1)
         setupViews()
         saveButton.addTarget(self, action: #selector(didTapSave), for: .touchUpInside)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapAvatar))
-        avatarImageView.addGestureRecognizer(tapGesture)
-            // Load avatar image from UserDefaults if available
-            if let avatarData = UserDefaults.standard.data(forKey: "userAvatar"), let avatarImage = UIImage(data: avatarData) {
-                avatarImageView.image = avatarImage
-            }
-            // Load bio, city, and phone number from UserDefaults
-            if let bio = UserDefaults.standard.string(forKey: "userBio") {
-                bioField.text = bio
-            }
-            if let city = UserDefaults.standard.string(forKey: "userLocation") {
-                locationField.text = city
-            }
-            if let phone = UserDefaults.standard.string(forKey: "userPhone") {
-                phoneField.text = phone
-            }
     }
     @objc func didTapSave() {
-    let bio = bioField.text ?? ""
-    let city = locationField.text ?? ""
-    let phone = phoneField.text ?? ""
-    UserDefaults.standard.setValue(bio, forKey: "userBio")
-    UserDefaults.standard.setValue(city, forKey: "userLocation")
-    UserDefaults.standard.setValue(phone, forKey: "userPhone")
+        let bio = bioField.text ?? ""
+        let location = locationField.text ?? ""
+        let phone = phoneField.text ?? ""
+        // Simpan ke UserDefaults (atau model, sesuai kebutuhan)
+        UserDefaults.standard.setValue(bio, forKey: "userBio")
+        UserDefaults.standard.setValue(location, forKey: "userLocation")
+        UserDefaults.standard.setValue(phone, forKey: "userPhone")
         let alert = UIAlertController(title: "Saved!", message: "Profile changes have been saved.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
-        // Save avatar image if changed
-        if let image = avatarImageView.image, let imageData = image.jpegData(compressionQuality: 0.8) {
-            UserDefaults.standard.setValue(imageData, forKey: "userAvatar")
-        }
     }
-
-        @objc func didTapAvatar() {
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            picker.sourceType = .photoLibrary
-            picker.allowsEditing = true
-            present(picker, animated: true, completion: nil)
-        }
 
     private func setupViews() {
         view.addSubview(cardView)
@@ -177,28 +149,5 @@ class AboutViewController: UIViewController {
             saveButton.heightAnchor.constraint(equalToConstant: 48),
             saveButton.bottomAnchor.constraint(lessThanOrEqualTo: cardView.bottomAnchor, constant: -32)
         ])
-    }
-}
-// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
-extension AboutViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        var selectedImage: UIImage?
-        if let editedImage = info[.editedImage] as? UIImage {
-            selectedImage = editedImage
-        } else if let originalImage = info[.originalImage] as? UIImage {
-            selectedImage = originalImage
-        }
-        if let image = selectedImage {
-            avatarImageView.image = image
-            // Optionally save to UserDefaults as Data
-            if let imageData = image.jpegData(compressionQuality: 0.8) {
-                UserDefaults.standard.setValue(imageData, forKey: "userAvatar")
-            }
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
     }
 }
