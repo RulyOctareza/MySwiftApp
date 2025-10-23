@@ -1,7 +1,7 @@
-# MySwiftApp
+# RestaurantApp
 
 ## Overview
-MySwiftApp is a simple iOS application that showcases a list of items, each with an image and detailed information. The app includes a main page for displaying the items, a detail page for viewing more information about a selected item, and an about page that provides user identity information.
+RestaurantApp is a simple iOS application that showcases a list of items, each with an image and detailed information. The app includes a main page for displaying the items, a detail page for viewing more information about a selected item, and an about page that provides user identity information.
 
 ## Features
 - Main Page: Displays a list of at least 10 different items with images and titles.
@@ -10,8 +10,8 @@ MySwiftApp is a simple iOS application that showcases a list of items, each with
 
 ## Project Structure
 ```
-MySwiftApp
-├── MySwiftApp
+RestaurantApp
+├── RestaurantApp
 │   ├── AppDelegate.swift
 │   ├── SceneDelegate.swift
 │   ├── ViewController.swift
@@ -23,7 +23,7 @@ MySwiftApp
 │   │   └── ItemCell.swift
 │   └── Assets.xcassets
 │       └── Contents.json
-├── MySwiftApp.xcodeproj
+├── RestaurantApp.xcodeproj
 │   └── project.pbxproj
 ├── Info.plist
 └── README.md
@@ -31,7 +31,7 @@ MySwiftApp
 
 ## Setup Instructions
 1. Clone the repository or download the project files.
-2. Open `MySwiftApp.xcodeproj` in Xcode.
+2. Open `RestaurantApp.xcodeproj` in Xcode.
 3. Build and run the project on a simulator or a physical device.
 
 ## Requirements

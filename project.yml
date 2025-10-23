@@ -1,20 +1,20 @@
-name: MySwiftApp
+name: RestaurantApp
 options:
   bundleIdPrefix: com.example
 targets:
-  MySwiftApp:
+  RestaurantApp:
     type: application
     platform: iOS
     deploymentTarget: "15.0"
     sources:
-      - path: MySwiftApp
+      - path: RestaurantApp
     info:
       path: Info.plist
       properties:
         CFBundleVersion: "1"
         CFBundleShortVersionString: "1.0"
         UILaunchStoryboardName: LaunchScreen
-        CFBundleDisplayName: MySwiftApp
+        CFBundleDisplayName: RestaurantApp
     attributes:
       LastSwiftMigration: 1500
     settings:
