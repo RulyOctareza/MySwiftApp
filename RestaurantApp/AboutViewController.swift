@@ -14,19 +14,24 @@ class AboutViewController: UIViewController {
 
     private let avatarImageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(systemName: "person.crop.circle.fill")
+        // Use static image from workspace
+        if let imagePath = Bundle.main.path(forResource: "potoku 2", ofType: "jpg"), let image = UIImage(contentsOfFile: imagePath) {
+            iv.image = image
+        } else {
+            iv.image = UIImage(systemName: "person.crop.circle.fill")
+        }
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.layer.cornerRadius = 50
         iv.backgroundColor = UIColor(white: 0.95, alpha: 1)
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.isUserInteractionEnabled = true // Enable interaction for tap gesture
+        iv.isUserInteractionEnabled = false // Disable interaction for tap gesture
         return iv
     }()
 
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "John Doe"
+        label.text = "Fatchurizkia Ruly Octareza"
         label.font = UIFont.boldSystemFont(ofSize: 22)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +40,7 @@ class AboutViewController: UIViewController {
 
     private let emailLabel: UILabel = {
         let label = UILabel()
-        label.text = "john.doe@example.com"
+        label.text = "octarezaruly@gmail.com"
         label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = .gray
         label.textAlignment = .center
@@ -86,12 +91,7 @@ class AboutViewController: UIViewController {
         view.backgroundColor = UIColor(white: 0.95, alpha: 1)
         setupViews()
         saveButton.addTarget(self, action: #selector(didTapSave), for: .touchUpInside)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapAvatar))
-        avatarImageView.addGestureRecognizer(tapGesture)
-            // Load avatar image from UserDefaults if available
-            if let avatarData = UserDefaults.standard.data(forKey: "userAvatar"), let avatarImage = UIImage(data: avatarData) {
-                avatarImageView.image = avatarImage
-            }
+    // Avatar is static, no tap gesture or UserDefaults loading
             // Load bio, city, and phone number from UserDefaults
             if let bio = UserDefaults.standard.string(forKey: "userBio") {
                 bioField.text = bio
@@ -113,19 +113,10 @@ class AboutViewController: UIViewController {
         let alert = UIAlertController(title: "Saved!", message: "Profile changes have been saved.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
-        // Save avatar image if changed
-        if let image = avatarImageView.image, let imageData = image.jpegData(compressionQuality: 0.8) {
-            UserDefaults.standard.setValue(imageData, forKey: "userAvatar")
-        }
+    // Avatar is static, do not save changes
     }
 
-        @objc func didTapAvatar() {
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            picker.sourceType = .photoLibrary
-            picker.allowsEditing = true
-            present(picker, animated: true, completion: nil)
-        }
+    // Avatar cannot be changed by user
 
     private func setupViews() {
         view.addSubview(cardView)
@@ -180,25 +171,4 @@ class AboutViewController: UIViewController {
     }
 }
 // MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
-extension AboutViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        var selectedImage: UIImage?
-        if let editedImage = info[.editedImage] as? UIImage {
-            selectedImage = editedImage
-        } else if let originalImage = info[.originalImage] as? UIImage {
-            selectedImage = originalImage
-        }
-        if let image = selectedImage {
-            avatarImageView.image = image
-            // Optionally save to UserDefaults as Data
-            if let imageData = image.jpegData(compressionQuality: 0.8) {
-                UserDefaults.standard.setValue(imageData, forKey: "userAvatar")
-            }
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-}
+// Avatar cannot be changed by user, so no picker delegate needed

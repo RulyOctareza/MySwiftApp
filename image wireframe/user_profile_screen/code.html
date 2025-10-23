@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#808080",
+            "background-light": "#f7f7f7",
+            "background-dark": "#191919",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="text-[#333333] dark:text-white flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</div>
+<h2 class="text-[#333333] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Profile</h2>
+<div class="flex w-12 items-center justify-end">
+<p class="text-primary dark:text-primary text-base font-bold leading-normal tracking-[0.015em] shrink-0">Edit</p>
+</div>
+</div>
+<div class="flex-grow p-4">
+<div class="flex w-full flex-col gap-8 items-center">
+<div class="relative flex gap-4 flex-col items-center">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32 shadow-md" data-alt="User avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfjM7tr5LT923KoqNDpjeqpPTTifHrOELQRpSWxhmxeZIpXcE_umVBk1ogcKEBxGzyBFrhPnhuZdD_8bZI0F1LbmvrTOA844ellaY5G7qjLLcSyCneYnHCz4B9i09R-qnWo7pNWpheVD5o2sZ5Hht7NM6U3FauPVDtG5pWvV_HWLAJzcAkS0ieQ1fX5QRUbYbfe4Px-oxutplbxmKKTyblA6t1ejJPHgf4hIUg1K_DXmiU5NE2mBLxpDPamran3BUoTS-GGGZxzDY");'></div>
+<button class="absolute bottom-1 right-1 bg-primary text-white rounded-full p-2 shadow-md">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+</div>
+<div class="flex flex-col items-center justify-center justify-center">
+<p class="text-[#333333] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] text-center">John Doe</p>
+<p class="text-[#888888] dark:text-gray-400 text-base font-normal leading-normal text-center">john.doe@example.com</p>
+</div>
+</div>
+<div class="w-full max-w-md space-y-6">
+<label class="flex flex-col w-full">
+<p class="text-[#333333] dark:text-white text-base font-medium leading-normal pb-2">Bio</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#333333] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#CCCCCC] dark:border-gray-600 bg-background-light dark:bg-background-dark h-14 placeholder:text-[#888888] p-4 text-base font-normal leading-normal" placeholder="Tell us a little about yourself" value=""/>
+</label>
+<div class="border-t border-[#CCCCCC] dark:border-gray-700"></div>
+<label class="flex flex-col w-full">
+<p class="text-[#333333] dark:text-white text-base font-medium leading-normal pb-2">Location</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#333333] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#CCCCCC] dark:border-gray-600 bg-background-light dark:bg-background-dark h-14 placeholder:text-[#888888] p-4 text-base font-normal leading-normal" placeholder="City, Country" value=""/>
+</label>
+<div class="border-t border-[#CCCCCC] dark:border-gray-700"></div>
+<label class="flex flex-col w-full">
+<p class="text-[#333333] dark:text-white text-base font-medium leading-normal pb-2">Phone Number</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#333333] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#CCCCCC] dark:border-gray-600 bg-background-light dark:bg-background-dark h-14 placeholder:text-[#888888] p-4 text-base font-normal leading-normal" placeholder="Your phone number" value=""/>
+</label>
+</div>
+</div>
+</div>
+<div class="sticky bottom-0 p-4 bg-background-light dark:bg-background-dark">
+<button class="w-full bg-primary text-white font-bold py-4 px-4 rounded-xl shadow-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+            Save Changes
+        </button>
+</div>
+</div>
+</body></html>

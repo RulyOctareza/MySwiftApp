@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Item Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#808080",
+              "background-light": "#f7f7f7",
+              "background-dark": "#121212",
+              "card-light": "#ffffff",
+              "card-dark": "#1e1e1e",
+              "text-light": "#111827",
+              "text-dark": "#f3f4f6",
+              "subtext-light": "#6b7280",
+              "subtext-dark": "#9ca3af"
+            },
+            fontFamily: {
+              display: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "0.75rem",
+              xl: "1rem",
+              full: "9999px"
+            },
+            boxShadow: {
+                'subtle': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+            }
+          },
+        },
+      };
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+<style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="flex items-center p-4 justify-between sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined !text-2xl">arrow_back</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined !text-2xl">favorite_border</span>
+</button>
+</header>
+<main class="flex-grow">
+<div class="px-4">
+<div class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-xl shadow-subtle" data-alt="A delicious looking pasta dish with basil and tomatoes." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDiOd62u6jC64khQ9SbVmK3sGg1WUAutqZwn8vyyfgl_cSj7Cf4qX-eZNYcvPgOd96ClsVUSdF-eV7dtQEyyFsjqsaNwGtOtomhxZjHlitPzRjNCYpwEcWMzO-iJfKNLbhw06vOeVfINiPgJ9CHOqNLKHm9FzuQtjMEnZDMpKoQTcMcjwcK2rv1NqcI6FECSlDV_Az0Rzxrsy9d5jxUiOwd0TOOajhesT9HrL3cMXi32_9eMrD2vgiRF3GHUwaYkvnu-aROthDKR0o");'></div>
+</div>
+<div class="px-5 pt-6 pb-2">
+<h1 class="text-3xl font-bold leading-tight tracking-tight">Gourmet Pasta Primavera</h1>
+<p class="text-subtext-light dark:text-subtext-dark text-base font-normal leading-relaxed pt-2">A delightful mix of fresh, seasonal vegetables and artisan pasta, tossed in a light, garlic-infused olive oil. A healthy and flavorful choice for any pasta lover.</p>
+</div>
+<div class="px-5 py-4">
+<h2 class="text-xl font-bold leading-tight">Ingredients</h2>
+<p class="text-subtext-light dark:text-subtext-dark text-base font-normal leading-relaxed pt-2">Artisan Pasta, Cherry Tomatoes, Bell Peppers, Zucchini, Broccoli, Garlic, Olive Oil, Fresh Basil.</p>
+</div>
+<div class="space-y-4 px-1">
+<div class="bg-card-light dark:bg-card-dark rounded-lg mx-4">
+<div class="flex px-4 py-3 justify-between items-center cursor-pointer">
+<h3 class="text-lg font-bold">Reviews</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined !text-xl text-yellow-500">star</span>
+<span class="material-symbols-outlined !text-xl text-yellow-500">star</span>
+<span class="material-symbols-outlined !text-xl text-yellow-500">star</span>
+<span class="material-symbols-outlined !text-xl text-yellow-500">star</span>
+<span class="material-symbols-outlined !text-xl text-gray-300 dark:text-gray-600">star</span>
+<span class="text-subtext-light dark:text-subtext-dark text-sm ml-1">(124)</span>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-lg mx-4">
+<div class="flex px-4 py-3 justify-between items-center cursor-pointer">
+<h3 class="text-lg font-bold">Nutritional Information</h3>
+<span class="material-symbols-outlined !text-2xl text-subtext-light dark:text-subtext-dark">chevron_right</span>
+</div>
+</div>
+</div>
+</main>
+<footer class="sticky bottom-0 bg-background-light dark:bg-background-dark p-4 border-t border-gray-200 dark:border-gray-800">
+<button class="w-full bg-text-light dark:bg-card-light text-background-light dark:text-background-dark font-bold py-4 px-4 rounded-xl shadow-subtle hover:opacity-90 transition-opacity">Add to Order</button>
+</footer>
+</div>
+
+</body></html>

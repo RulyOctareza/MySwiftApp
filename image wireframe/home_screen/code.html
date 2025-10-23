@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Restaurant App Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#808080",
+              "background-light": "#f7f7f7",
+              "background-dark": "#191919",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+<style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<h1 class="text-xl font-bold text-[#333333] dark:text-gray-200">Menu</h1>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center size-10 rounded-full text-[#333333] dark:text-gray-200">
+<span class="material-symbols-outlined">search</span>
+</button>
+<div class="size-10 rounded-full bg-center bg-no-repeat aspect-square bg-cover" data-alt="User profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBM7EORtW_vNTExxuBMacGnC37yTly_BWcNrvDikZVb8q2BeVnte6A-P2z3IV3lzrYX2kCpiiS27U2buZzgoAiCCBf7xHQZuYq4p_G_pNauxpDLodYrKZb9q49zmuRnQl5QsJYmX8tWY3YJLaXqydI6KfKDZb7NGcSIAcX0gIjg77p3Nv1HufaeDWtgrHKZnICFXAzL0F4RtC8IOhrIBnbwKpbybV6-bVx2xSjNAtb3DU6-S77aGboyvxoIM6gXfdFTMtztUkZQ36A')"></div>
+</div>
+</div>
+<div class="flex-grow p-4 space-y-4">
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-20" data-alt="A juicy grilled salmon steak on a bed of asparagus." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBYkU6ujqr3Qu0ax3cbZR0PG0UBMsuR1fjzDWI6AC2QV84pCRijEo_SyfQLkFLxB_k5_mSSWF1ck7DJbhyBWzKpHIu94x3W7p6Xb-a5Ka393CKZsHCsBQ27w7kOHxwXWUPMc-5uTn0vS27es434TjdjWZldNl-XHRtI2bXYuzKnR_9LaUaZ0lTO__Hvrb0uniVS3Q6CQ3JQS79bw9vLOCR82MIg9PNRan5xlc6NrGoB8-GvtKuUh_3GDGiKvVTxyfDXVYKppXFUDnc");'></div>
+<div class="flex flex-col justify-center flex-1">
+<p class="text-[#333333] dark:text-gray-200 text-base font-bold leading-normal">Grilled Salmon</p>
+<p class="text-black dark:text-gray-400 text-sm font-normal leading-normal mt-1">A succulent fillet of salmon, grilled to perfection and served with fresh asparagus.</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-20" data-alt="A classic spaghetti bolognese with a rich tomato sauce." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA9-0Q5i3fhHUIZ3o26KdcBnwV_Z2VNciYVDvXuXZzH2U_Q_gtuSyNXJLPehyHvmIKh27Y8qYob1WNC2_8aDwujg5P2rHll3q9yZdp-hAsd_4ITIxYcJQw83OMvcMTVCTXJrHZ4s3d41nkhMZE-Qao8yE8PwETBeC-aMaTwrosy0NQywNr6ZJ3M7xpLFGHD9kxBiJhF_vGlElNnjJ61yZYXPRMtsXDOWBxU-LYBvzbXW0ig0zoH2e5jy7L1mZFyEPzuxUsQ-xm1QZ4");'></div>
+<div class="flex flex-col justify-center flex-1">
+<p class="text-[#333333] dark:text-gray-200 text-base font-bold leading-normal">Spaghetti Bolognese</p>
+<p class="text-black dark:text-gray-400 text-sm font-normal leading-normal mt-1">Classic Italian pasta with a rich, slow-cooked meat and tomato sauce.</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-20" data-alt="A fresh Caesar salad with grilled chicken and croutons." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZc7PqmztI5zil2ETh52XIzhicGGQsl9nv2WP9FQow2waAb3YPckOQ2mYy_Hdv0HcNEqCcc6R-Y67LFKrA8aQLXgGRWDbDUU-w5rxfUMouxlwHFh5-a7NQZS5vLFXgRh9Mcznwey61OWcNHhLwnU5NK5YQ48aWf2l9hWN-QmrGSXkA9KkOC0gcUy97v07rYJxOord67xJcq9hxm2E8-2hLZ6UeRlwbCY0AJx-EAlKOAJXD6rfwlVks4U0xdHOCiPb5bXURh3m3Alc");'></div>
+<div class="flex flex-col justify-center flex-1">
+<p class="text-[#333333] dark:text-gray-200 text-base font-bold leading-normal">Chicken Caesar Salad</p>
+<p class="text-black dark:text-gray-400 text-sm font-normal leading-normal mt-1">Crisp romaine lettuce, grilled chicken, parmesan, and croutons in a creamy Caesar dressing.</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-20" data-alt="A delicious looking Margherita pizza with fresh basil." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_HcB1BBK9FJfECx4c2lFxRr16IoBUR-RlGJtce6FW3YCjbo1FtRtLnNJm5yQvzR79uZaXVG9kfb0sQeswEKnPpX4O5BIuJ35W1RM0a_iUeu7b7xT4pf7XB8aRUQA_FaBYHEGaP2ZOiLMPuJQdbKUCfrbiiNDBmRvE7dIjm2yl426ii_Qe9p85bO0bGQjTgfK0mq9hIaxDpuSUxeadQuIjjuPiYJvJ2g-ZnFwxJ-cr7oymU4zMKGRvNPanuNNK1g5vDIsorIs_Gc8");'></div>
+<div class="flex flex-col justify-center flex-1">
+<p class="text-[#333333] dark:text-gray-200 text-base font-bold leading-normal">Margherita Pizza</p>
+<p class="text-black dark:text-gray-400 text-sm font-normal leading-normal mt-1">A timeless pizza with tomato sauce, fresh mozzarella, and aromatic basil.</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-20" data-alt="A rich and creamy chocolate lava cake with a molten center." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCweH187CPfonjWRuP2T2gVKg8_yHbooCipvfiX9-cMkQqMNqwdJRTtS4x_7BI3BRKa5-29j_57xe-M05WR759BPqKbPpnSVwh62HTcK5fjFBISUXYTpxkgXgg3B7MbEHlhrNKtt5UbNxR_o9ZRMNROjj0M-SMQrCdtEz76k39gtD8Mb8Gbe20BFn_VeiHzUvTOmC5Uut2ZTeCmX1CGfwW9jksHx5DMeaJCl2c7WPHXKK1hyEi98rvg-33qjT3AoJTob37dVKEI5NM");'></div>
+<div class="flex flex-col justify-center flex-1">
+<p class="text-[#333333] dark:text-gray-200 text-base font-bold leading-normal">Chocolate Lava Cake</p>
+<p class="text-black dark:text-gray-400 text-sm font-normal leading-normal mt-1">Decadent chocolate cake with a gooey, molten center, served warm.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>
