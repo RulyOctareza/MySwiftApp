@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/preview/hero.png" alt="MySwiftApp — ilustrasi aplikasi katalog restoran iOS" width="100%">
+  <img src="docs/preview/hero.svg" alt="MySwiftApp — ilustrasi aplikasi katalog restoran iOS" width="100%">
 </p>
 
 <h1 align="center">MySwiftApp — RestaurantApp</h1>
